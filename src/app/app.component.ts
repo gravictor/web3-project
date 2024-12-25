@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { DOCUMENT } from '@angular/common';
+import { Component, Inject, Renderer2 } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,13 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'web3-project';
+  private isDark: boolean = false;
+
+  constructor(@Inject(DOCUMENT) private document: Document, private renderer: Renderer2) {
+  }
+
+  switchMode(isDarkMode: boolean): void {
+    const hostClass = !isDarkMode ? 'app-theme-dark' : 'app-theme-light';
+    this.renderer.setAttribute(this.document.body, 'class', hostClass);
+  }
 }
