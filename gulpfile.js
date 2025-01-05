@@ -13,23 +13,20 @@ const paths = {
   },
 };
 
-// Компиляция SCSS в CSS
 function styles() {
   return gulp
-    .src(paths.styles.src) // Берем SCSS-файлы из всех указанных путей
-    .pipe(sourcemaps.init()) // Создание sourcemaps
-    .pipe(sass().on('error', sass.logError)) // Компиляция SCSS
-    .pipe(autoprefixer({ cascade: false })) // Добавление префиксов
-    .pipe(cleanCSS()) // Минификация CSS
-    .pipe(sourcemaps.write('.')) // Запись sourcemaps
-    .pipe(gulp.dest(paths.styles.dest)); // Сохранение результата
+    .src(paths.styles.src)
+    .pipe(sourcemaps.init())
+    .pipe(sass().on('error', sass.logError))
+    .pipe(autoprefixer({ cascade: false }))
+    .pipe(cleanCSS())
+    .pipe(sourcemaps.write('.'))
+    .pipe(gulp.dest(paths.styles.dest));
 }
 
-// Watcher для всех путей
 function watchFiles() {
-  gulp.watch(paths.styles.src, styles); // Следим за всеми SCSS-файлами
+  gulp.watch(paths.styles.src, styles);
 }
 
-// Экспорт задач
 exports.styles = styles;
 exports.watch = gulp.series(styles, watchFiles);

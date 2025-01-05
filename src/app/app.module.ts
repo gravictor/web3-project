@@ -11,11 +11,15 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import { AppHomeComponent } from "./components/home/home.component";
+import { AppSonicCheckerComponent } from "./components/checkers/sonic/sonic-checker.component";
 
 @NgModule({
   declarations: [
     AppComponent,
-    NavigationComponent
+    NavigationComponent,
+    AppHomeComponent,
+    AppSonicCheckerComponent,
   ],
   imports: [
     BrowserModule,
