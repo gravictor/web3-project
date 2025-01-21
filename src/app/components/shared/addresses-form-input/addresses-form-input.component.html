@@ -1,0 +1,8 @@
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+  <mat-form-field class="example-full-width">
+    <mat-label>Paste addresses here</mat-label>
+    <textarea matInput placeholder="max 50" formControlName="addresses"></textarea>
+  </mat-form-field>
+
+  <button mat-raised-button type="submit">Check</button>
+</form>

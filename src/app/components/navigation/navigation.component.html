@@ -2,18 +2,18 @@
   <mat-sidenav #drawer class="app-sidenav" fixedInViewport
       [attr.role]="isPinned ? 'dialog' : 'navigation'"
       [mode]="isPinned ? 'over' : 'side'">
-      <div class="app-sidenav-wrapper">
+  <div class="app-sidenav-wrapper">
     <mat-nav-list (click)="isPinned && drawer.close()">
       <a mat-list-item routerLink="/sonic" routerLinkActive="active">Sonic</a>
-      <a mat-list-item routerLink="/home" routerLinkActive="active">Link 2</a>
+      <a mat-list-item routerLink="/xai" routerLinkActive="active">Xai</a>
       <a mat-list-item routerLink="/home" routerLinkActive="active">Link 3</a>
     </mat-nav-list>
-          <div class="app-sidenav-footer">
-              <button mat-icon-button (click)="pin()">
-                  <mat-icon>pinboard_unread</mat-icon>
-              </button>
-          </div>
-      </div>
+    <div class="app-sidenav-footer">
+      <button mat-icon-button (click)="pin()">
+        <mat-icon>pinboard_unread</mat-icon>
+      </button>
+    </div>
+  </div>
   </mat-sidenav>
   <mat-sidenav-content>
     <mat-toolbar class="app-header">
@@ -31,6 +31,8 @@
         </mat-slide-toggle>
       </span>
     </mat-toolbar>
-    <router-outlet></router-outlet>
+    <div class="app-content">
+      <router-outlet></router-outlet>
+    </div>
   </mat-sidenav-content>
 </mat-sidenav-container>

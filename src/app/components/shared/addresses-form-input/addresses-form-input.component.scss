@@ -1,0 +1,12 @@
+form {
+  display: flex;
+  flex-direction: column;
+
+  textarea {
+    max-height: 60dvh;
+  }
+
+  button {
+    width: 20dvw;
+  }
+}
